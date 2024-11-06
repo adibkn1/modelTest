@@ -107,3 +107,52 @@ model-viewer[ar-status="session-started"] > #ar-prompt {
 model-viewer > #ar-prompt > img {
   animation: circle 4s linear infinite;
 }
+
+#desktop-view {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#qr-code {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+}
+
+#mobile-view {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #desktop-view {
+    display: block;
+  }
+
+  #mobile-view {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #mobile-view {
+    display: block;
+  }
+
+  .mobile-bg {
+    text-align: center;
+    background: url('mobile_background.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 20px;
+  }
+
+  .mobile-bg p {
+    font-size: 18px;
+    color: #000;
+    margin-bottom: 10px;
+  }
+}
