@@ -10,11 +10,4 @@ const onProgress = (event) => {
     progressBar.classList.remove('hide');
   }
 };
-
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
-
-// Launch AR view upon tapping anywhere on the screen
-document.getElementById('mobile-view').addEventListener('click', () => {
-  const modelViewer = document.getElementById('ar-viewer');
-  modelViewer.activateAR();
-});
