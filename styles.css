@@ -145,7 +145,7 @@ model-viewer > #ar-prompt > img {
 
   .mobile-bg {
     text-align: center;
-    background: url('mobile_background.jpg') no-repeat center center;
+    background: url(mobile_background.png) no-repeat center center;
     background-size: cover;
     padding: 20px;
   }
