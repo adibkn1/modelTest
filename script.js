@@ -1,4 +1,4 @@
-// Handles loading the events for <model-viewer>'s slotted progress bar
+// Handles loading events for <model-viewer>'s slotted progress bar
 const onProgress = (event) => {
   const progressBar = event.target.querySelector('.progress-bar');
   const updatingBar = event.target.querySelector('.update-bar');
@@ -10,4 +10,11 @@ const onProgress = (event) => {
     progressBar.classList.remove('hide');
   }
 };
+
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
+
+// Launch AR view upon tapping anywhere on the mobile screen
+document.getElementById('mobile-view').addEventListener('click', () => {
+  const modelViewer = document.getElementById('ar-viewer');
+  modelViewer.activateAR();
+});
