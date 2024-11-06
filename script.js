@@ -10,4 +10,10 @@ const onProgress = (event) => {
     progressBar.classList.remove('hide');
   }
 };
+
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
+
+// Optional: Use passive event listeners for better scroll performance
+document.addEventListener('wheel', (event) => {
+  // Custom handling code (if needed)
+}, { passive: true });
