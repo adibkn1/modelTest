@@ -1,51 +1,87 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <title>Komaki X1 AR Experience</title>
-    <meta charset="utf-8">
-    <meta name="description" content="Komaki X1 AR Experience">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" href="./styles.css" rel="stylesheet"/>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100vh;
-        background: url('./mobile_background.jpg') no-repeat center center;
-        background-size: cover;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-      }
-      #mobile-view p {
-        font-size: 24px;
-        color: #ffffff;
-        margin-bottom: 20px;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="desktop-view">
-      <p>Scan this to experience Komaki X1 in your space</p>
-      <img src="qr_code_image.png" alt="QR Code" id="qr-code">
-    </div>
-    
-    <div id="mobile-view">
-      <p>Experience Komaki X1 in your space</p>
-      <model-viewer id="ar-viewer" src="Komaki_X1_High_Poly_V17.glb" ar ar-modes="scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="0" environment-image="aircraft_workshop_01_1k.hdr" exposure="1.65" shadow-softness="0">
-        <div class="progress-bar hide" slot="progress-bar">
-            <div class="update-bar"></div>
-        </div>
-        <div id="ar-prompt">
-            <img src="ar_hand_prompt.png" alt="AR Hand Prompt">
-        </div>
-      </model-viewer>
-    </div>
+#desktop-view {
+  display: none;
+  text-align: center;
+  margin-top: 50px;
+}
 
-    <script src="script.js"></script>
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
-  </body>
-</html>
+#qr-code {
+  width: 200px;
+  height: auto;
+  margin-top: 20px;
+}
+
+#mobile-view {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  #desktop-view {
+    display: block;
+  }
+
+  #mobile-view {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  #desktop-view {
+    display: none;
+  }
+
+  #mobile-view {
+    display: block;
+    height: 100vh;
+    position: relative;
+  }
+
+  .mobile-bg {
+    text-align: center;
+    background: url('./mobile_background.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .mobile-bg p {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+}
+
+.progress-bar {
+  display: block;
+  width: 33%;
+  height: 10%;
+  max-height: 2%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  border-radius: 25px;
+  box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.progress-bar.hide {
+  visibility: hidden;
+  transition: visibility 0.3s;
+}
+
+.update-bar {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 0%;
+  height: 100%;
+  border-radius: 25px;
+  float: left;
+  transition: width 0.3s;
+}
+
+#ar-prompt img {
+  animation: circle 4s linear infinite;
+}
