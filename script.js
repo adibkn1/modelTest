@@ -6,18 +6,17 @@ const onProgress = (event) => {
     updatingBar.style.width = `${event.detail.totalProgress * 100}%`;
     if (event.detail.totalProgress === 1) {
       progressBar.classList.add('hide');
-      document.getElementById('tap-overlay').style.display = 'flex'; // Show tap overlay
+      event.target.removeEventListener('progress', onProgress);
     } else {
       progressBar.classList.remove('hide');
-      document.getElementById('tap-overlay').style.display = 'none'; // Hide tap overlay during loading
     }
   }
 };
 
 document.getElementById('ar-viewer').addEventListener('progress', onProgress);
 
-// Launch AR view upon tapping the overlay
-document.getElementById('tap-overlay').addEventListener('click', () => {
+// Launch AR view upon tapping anywhere on the mobile screen
+document.getElementById('mobile-view').addEventListener('click', () => {
   const modelViewer = document.getElementById('ar-viewer');
   modelViewer.activateAR();
 });
