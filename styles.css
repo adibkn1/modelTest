@@ -31,19 +31,25 @@
 
   #mobile-view {
     display: block;
+    height: 100vh;
+    position: relative;
   }
 
   .mobile-bg {
     text-align: center;
     background: url('./mobile_background.jpg') no-repeat center center;
     background-size: cover;
-    padding: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
 
   .mobile-bg p {
-    font-size: 18px;
-    color: #000;
-    margin-bottom: 10px;
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
   }
 }
 
@@ -76,40 +82,6 @@
   transition: width 0.3s;
 }
 
-#ar-button {
-  background-color: #fff;
-  position: relative;
-  padding: 0px 16px;
-  font-family: Roboto, Helvetica Neue, sans-serif;
-  font-size: 14px;
-  color: #4285f4;
-  height: 36px;
-  line-height: 36px;
-  border-radius: 18px;
-  border: 1px solid #DADCE0;
-  cursor: pointer;
-}
-
-#ar-button:focus {
-  outline: none;
-}
-
-#ar-button:active {
-  background-color: #E8EAED;
-}
-
-model-viewer > #ar-prompt {
-  position: absolute;
-  left: 50%;
-  bottom: 60px;
-  animation: elongate 2s infinite ease-in-out alternate;
-  display: none;
-}
-
-model-viewer[ar-status="session-started"] > #ar-prompt {
-  display: block;
-}
-
-model-viewer > #ar-prompt > img {
+#ar-prompt img {
   animation: circle 4s linear infinite;
 }

@@ -13,7 +13,8 @@ const onProgress = (event) => {
 
 document.querySelector('model-viewer').addEventListener('progress', onProgress);
 
-// Optional: Use passive event listeners for better scroll performance
-document.addEventListener('wheel', (event) => {
-  // Custom handling code (if needed)
-}, { passive: true });
+// Launch AR view upon tapping anywhere on the screen
+document.getElementById('mobile-view').addEventListener('click', () => {
+  const modelViewer = document.getElementById('ar-viewer');
+  modelViewer.activateAR();
+});
