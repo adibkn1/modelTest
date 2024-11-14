@@ -22,11 +22,6 @@ document.getElementById('mobile-view').addEventListener('click', () => {
 
   // Show the GIF overlay
   const gifOverlay = document.getElementById('gif-overlay');
-  gifOverlay.style.display = 'block';
-
-  // Optionally, hide the GIF after a certain time (e.g., 3 seconds)
-  setTimeout(() => {
-    gifOverlay.style.display = 'none';
-  }, 3000);
+  gifOverlay.style.display = 'block'; // Display the GIF overlay continuously
 });
 
