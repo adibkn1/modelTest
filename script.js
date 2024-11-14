@@ -20,7 +20,7 @@ document.getElementById('mobile-view').addEventListener('click', () => {
   const modelViewer = document.getElementById('ar-viewer');
   modelViewer.activateAR();
 
-  // Change the background to include the GIF after the tap
+  // Change the background to blend the GIF with the existing background after a tap
   const mobileView = document.getElementById('mobile-view');
   mobileView.style.background = `
     url('wait.gif') no-repeat center center, 

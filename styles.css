@@ -33,13 +33,11 @@ html, body {
   display: none;
   width: 100vw; /* Use viewport width */
   height: 100vh; /* Use viewport height */
-  background: 
-    url('wait.gif') no-repeat center center, /* GIF as the top layer */
-    url('./mobile_background.png') no-repeat center center; /* Background image as the bottom layer */
-  background-size: cover, cover; /* Ensures both layers cover the screen */
-  background-position: center, center; /* Centers both layers */
+  background: url('./mobile_background.png') no-repeat center center; /* Initial background */
+  background-size: cover;
   position: relative;
 }
+
 
 .progress-bar {
   display: block;
