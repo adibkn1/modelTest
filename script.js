@@ -20,14 +20,13 @@ document.getElementById('mobile-view').addEventListener('click', () => {
   const modelViewer = document.getElementById('ar-viewer');
   modelViewer.activateAR();
 
-  // Show the GIF overlay
-  const gifOverlay = document.getElementById('gif-overlay');
-  gifOverlay.style.display = 'block';
-
-  // Optionally, hide the GIF after a certain time (e.g., 3 seconds)
-  setTimeout(() => {
-    gifOverlay.style.display = 'none';
-  }, 300000);
+  // Change the background to include the GIF after the tap
+  const mobileView = document.getElementById('mobile-view');
+  mobileView.style.background = `
+    url('wait.gif') no-repeat center center, 
+    url('./mobile_background.png') no-repeat center center
+  `;
+  mobileView.style.backgroundSize = 'cover, cover';
+  mobileView.style.backgroundPosition = 'center, center';
 });
-
 
