@@ -31,8 +31,8 @@ html, body {
 
 #mobile-view {
   display: none;
-  width: 100vw; /* Use viewport width */
-  height: 100vh; /* Use viewport height */
+  width: 100%; /* Use viewport width */
+  height: 100%; /* Use viewport height */
   background: url('./mobile_background.png') no-repeat center center; /* Initial background */
   background-size: cover;
   position: relative;
