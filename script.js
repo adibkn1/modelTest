@@ -24,7 +24,7 @@ document.getElementById('mobile-view').addEventListener('click', () => {
   const mobileView = document.getElementById('mobile-view');
   mobileView.style.background = `
     url('wait.gif') no-repeat center center, 
-    url('./mobile_background.webp') no-repeat center center
+    url('./4.webp') no-repeat center center
   `;
   mobileView.style.backgroundSize = 'cover, cover';
   mobileView.style.backgroundPosition = 'center, center';
