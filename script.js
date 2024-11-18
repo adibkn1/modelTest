@@ -17,16 +17,18 @@ document.getElementById('ar-viewer').addEventListener('progress', onProgress);
 
 // Launch AR view upon tapping anywhere on the mobile screen
 document.getElementById('mobile-view').addEventListener('click', () => {
+  // Activate AR mode
   const modelViewer = document.getElementById('ar-viewer');
   modelViewer.activateAR();
 
-  // Change the background to blend the GIF with the existing background after a tap
+  // Change the background to include the GIF after tapping
   const mobileView = document.getElementById('mobile-view');
   mobileView.style.background = `
-    url('wait.gif') no-repeat center center, 
-    url('./mobile_background.png') no-repeat center center
+    url('./mobile_background.png') no-repeat center center, 
+    url('wait.gif') no-repeat center center
   `;
   mobileView.style.backgroundSize = 'cover, cover';
   mobileView.style.backgroundPosition = 'center, center';
 });
+
 
