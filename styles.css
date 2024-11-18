@@ -33,7 +33,7 @@ html, body {
   display: none;
   width: 100%; /* Use viewport width */
   height: 100%; /* Use viewport height */
-  background: url('./mobile_background.jpg') no-repeat center center; /* Initial background */
+  background: url('./mobile_background.png') no-repeat center center; /* Initial background */
   background-size: cover;
   position: relative;
 }
